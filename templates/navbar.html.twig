@@ -1,5 +1,5 @@
 {% block navbar %}
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 		  <a class="navbar-brand" href="{{path('accueil')}}">RedécouvrirDieu.fr</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
@@ -8,26 +8,24 @@
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
 		      <li class="nav-item">
-		        <a class="nav-link" href="{{path('articles')}}">Articles</a>
+		        <a class="nav-link" href="{{path('articles')}}">Les Projets</a>
 		      </li>
 
-		      <li class="nav-item">
-		        <a class="nav-link" href="{{path('create')}}">Ajouter un article</a>
-		      </li>
 
 		      <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          Autres
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		        	<h6 class="dropdown-header">Annexes</h6>
-		          <a class="dropdown-item" href="#">Les versets du Coran</a>
-		         
-		          <a class="dropdown-item" ui-sref="lexique">Lexique</a>
+		        
+		        	{% if app.user %}
+		       		<h6 class="dropdown-header">Annexes</h6>
+		          	<a class="dropdown-item" href="{{path('create')}}">Ajouter un article</a>
+					{% endif %}
+
 		           <div class="dropdown-divider"></div>
-		           <h6 class="dropdown-header">Liens externes</h6>
-		           <a class="dropdown-item" href="http://corpus.quran.com/wordbyword.jsp" target="_blank">The Quranic Arabic Corpus | Word by Word</a>
-		          <a class="dropdown-item" href="https://sunnah.com/" target="_blank">Sunnah.com</a>
+		           <h6 class="dropdown-header">Liens</h6>
+		           <a class="dropdown-item" href="{{path('articles')}}">Liste complète des articles</a>
 		          
 		        </div>
 		      </li>
