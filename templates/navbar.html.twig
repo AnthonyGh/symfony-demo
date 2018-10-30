@@ -7,20 +7,14 @@
 
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		    <ul class="navbar-nav mr-auto">
-		      <li class="nav-item active">
-		        <a class="nav-link" href="{{path('accueil')}}">Accueil <span class="sr-only">(current)</span></a>
-		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="{{path('articles')}}">Articles</a>
 		      </li>
 
 		      <li class="nav-item">
-		        <a class="nav-link" href="{{path('create')}}">Ajouter</a>
+		        <a class="nav-link" href="{{path('create')}}">Ajouter un article</a>
 		      </li>
 
-		      <li class="nav-item">
-		        <a class="nav-link" ui-sref="videos">Vidéos</a>
-		      </li>
 		      <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          Autres
@@ -38,10 +32,28 @@
 		        </div>
 		      </li>
 		    </ul>
+
+
 		    <form class="form-inline my-2 my-lg-0">
 		      <input class="form-control mr-sm-2" type="search" placeholder="Chercher une page" aria-label="Search" onkeyup="showResult(this.value)">
 		      <div id="livesearch"></div>
 		    </form>
+
+
+		    <ul class="navbar-nav">
+		    {% if not app.user %}
+			      <li class="nav-item">
+			        <a class="btn btn-perso" href="{{path('security_login')}}" style="margin-left: 10px; margin-right: 10px;">Se logger</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="btn btn-perso" href="{{path('security_registration')}}">S'enregistrer</a>
+			      </li>
+		      {% else %}
+			      <li class="nav-item">
+			        <a class="btn btn-perso" href="{{path('security_logout')}}">Se déconnecter</a>
+			      </li>
+			  {% endif %}
+			  </ul>
 		  </div>
 		</nav>
 {% endblock %}

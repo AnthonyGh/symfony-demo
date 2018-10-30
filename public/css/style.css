@@ -25,6 +25,17 @@ i{
     padding-left:50px;
 }
 
+.btn-perso{
+	background-color:#444;
+	color:white;
+	transition: ease 0.3s
+}
+
+.btn-perso:hover{
+	background-color:#222;
+	color:white;
+}
+
 #livesearch{
 
     position: absolute;
