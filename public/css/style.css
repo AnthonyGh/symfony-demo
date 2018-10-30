@@ -50,6 +50,9 @@ i{
 
 /*jumbotron*/
 
+.jumbotron{
+    padding: 3rem 3rem;
+}
 .jumbotron h1{
     font-size:48px;
 }
@@ -263,6 +266,21 @@ footer{
 	padding:20px;
 }
 
+.logos img{
+	margin:5px;
+	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+	transition: all .15s linear 0s;
+}
+
+.logos img:hover{
+	filter: grayscale(0);
+	-webkit-filter: grayscale(0);
+}
+
+.logos a:hover{
+	text-decoration: none;
+}
 
 .ng-enter {
   transition: all 0.3s;
