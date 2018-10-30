@@ -1,0 +1,47 @@
+{% block navbar %}
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="{{path('accueil')}}">RedécouvrirDieu.fr</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="{{path('accueil')}}">Accueil <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="{{path('articles')}}">Articles</a>
+		      </li>
+
+		      <li class="nav-item">
+		        <a class="nav-link" href="{{path('create')}}">Ajouter</a>
+		      </li>
+
+		      <li class="nav-item">
+		        <a class="nav-link" ui-sref="videos">Vidéos</a>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Autres
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		        	<h6 class="dropdown-header">Annexes</h6>
+		          <a class="dropdown-item" href="#">Les versets du Coran</a>
+		         
+		          <a class="dropdown-item" ui-sref="lexique">Lexique</a>
+		           <div class="dropdown-divider"></div>
+		           <h6 class="dropdown-header">Liens externes</h6>
+		           <a class="dropdown-item" href="http://corpus.quran.com/wordbyword.jsp" target="_blank">The Quranic Arabic Corpus | Word by Word</a>
+		          <a class="dropdown-item" href="https://sunnah.com/" target="_blank">Sunnah.com</a>
+		          
+		        </div>
+		      </li>
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" type="search" placeholder="Chercher une page" aria-label="Search" onkeyup="showResult(this.value)">
+		      <div id="livesearch"></div>
+		    </form>
+		  </div>
+		</nav>
+{% endblock %}
