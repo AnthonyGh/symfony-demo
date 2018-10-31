@@ -42,12 +42,17 @@
 		    <ul class="navbar-nav">
 		    {% if not app.user %}
 			      <li class="nav-item">
-			        <a class="btn btn-perso" href="{{path('security_login')}}" style="margin-left: 10px; margin-right: 10px;">Se logger</a>
+			        <a class="btn btn-perso" href="{{path('security_login')}}">Se logger</a>
 			      </li>
 			      <li class="nav-item">
 			        <a class="btn btn-perso" href="{{path('security_registration')}}">S'enregistrer</a>
 			      </li>
 		      {% else %}
+			      {% if is_granted('ROLE_ADMIN') %}
+			      	<li class="nav-item">
+			        <a class="btn btn-perso" href="{{path('admin')}}">Administration</a>
+			      </li>
+			      {% endif %}
 			      <li class="nav-item">
 			        <a class="btn btn-perso" href="{{path('security_logout')}}">Se déconnecter</a>
 			      </li>

@@ -14,8 +14,9 @@
 				</div>
 				
 			</article>
-
+			{% if is_granted('ROLE_ADMIN') %}
 				<a class="btn btn-primary" href="{{path('edit', {'id':article.id})}}">Modifier l'article</a>
+			<% endif %>
 			<hr>
 			
 			<section id="commentaires">

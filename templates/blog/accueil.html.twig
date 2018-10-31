@@ -5,8 +5,9 @@
 {% block body %}
 <h1 style="text-align:right">{{ title }}</h1>
 
-
-
+{%if app.user %}
+<p style="text-align:right">Bonjour {{app.user.username}} !</p>
+{% endif %}
 
 
 <div class="jumbotron">

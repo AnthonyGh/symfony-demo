@@ -57,6 +57,11 @@ class Article
      */
     private $comments;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Chapter", inversedBy="articles")
+     */
+    private $chapter;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -154,6 +159,18 @@ class Article
                 $comment->setArticle(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getChapter(): ?Chapter
+    {
+        return $this->chapter;
+    }
+
+    public function setChapter(?Chapter $chapter): self
+    {
+        $this->chapter = $chapter;
 
         return $this;
     }
