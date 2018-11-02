@@ -57,10 +57,7 @@ class Article
      */
     private $comments;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Chapter", inversedBy="articles")
-     */
-    private $chapter;
+    
 
     public function __construct()
     {
@@ -163,15 +160,4 @@ class Article
         return $this;
     }
 
-    public function getChapter(): ?Chapter
-    {
-        return $this->chapter;
-    }
-
-    public function setChapter(?Chapter $chapter): self
-    {
-        $this->chapter = $chapter;
-
-        return $this;
-    }
 }
